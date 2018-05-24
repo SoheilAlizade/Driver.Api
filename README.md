@@ -147,9 +147,11 @@ GET /api/v{version}/driver/pack/{key}
 | `Destination` |    تهران...     |  مقصد بسته   |
 | `Weight`      |     10 کیلو     |   وزن بسته   |
 | `Type`        |       سبک       | وضعیت راننده |
-| `PackCount`   |        5        | وضعیت راننده |
-| `IsPacking`   | true \|\| false | وضعیت راننده |
-| `IsInsurance` | true \|\| flase | وضعیت راننده |
-| `Explain`     |  بسته شامل ..   | وضعیت راننده |
-| `Price`       |       564       | وضعیت راننده |
-| `PayAtOrigin` | true \|\| false | وضعیت راننده |
+| `PackCount`   |        5        | تعداد بسته |
+| `IsPacking`   | true \|\| false | بسته بندی |
+| `IsInsurance` | true \|\| flase | بیمه |
+| `Explain`     |  بسته شامل ..   | توضیحات |
+| `Price`       |       564       | قیمت |
+| `PayAtOrigin` | true \|\| false | پرداخت در مقصد |
+
+
