@@ -115,6 +115,8 @@ GET /api/v{version}/driver/pack/{key}
 
 <h3> Response </h3>
 
+_status code 200 - ok_
+
 ```
 {
   "HasDriver": false,
@@ -129,7 +131,8 @@ GET /api/v{version}/driver/pack/{key}
     "InsuranceValue": "",
     "Explain": "توضیح",
     "Price": 389512569,
-    "PayAtOrigin": false
+    "PayAtOrigin": false,
+    "key": 1
   }
 }
 ```
@@ -153,5 +156,142 @@ GET /api/v{version}/driver/pack/{key}
 | `Explain`     |  بسته شامل ..   | توضیحات |
 | `Price`       |       564       | قیمت |
 | `PayAtOrigin` | true \|\| false | پرداخت در مقصد |
+
+<div dir='rtl'>
+توسط فیلد `HasDriver` میتوان بررسی کنید که آیا این بسته توسط راننده دیگر دریافت شده است یا خیر.
+ </div>
+
+<hr>
+
+<h2 dir='rtl'>دریافت اطلاعات کامل بسته </h2>
+
+<h3>URL</h3>
+
+```
+GET /api/v{version}/driver/pack/{key}/full 
+```
+
+<h3>Response</h3>
+
+_status code 200 - ok_
+
+```
+{
+{
+  "DisplayName": "string string",
+  "PhoneNumber": "09198143732",
+  "Destination": {
+    "phone_number": "string",
+    "reciver_name": "string",
+    "address": " استان string شهر string خیابان string کوچه string پلاک string طبقه string",
+    "province": "string",
+    "city": "string",
+    "street": "string",
+    "plaque": "string",
+    "latitude": "string",
+    "longitude": "string",
+    "floor": "string",
+    "alley": "string",
+    "key": 1
+  },
+  "Origin": {
+    "address": " استان string شهر string خیابان string کوچه string پلاک string طبقه string",
+    "province": "string",
+    "city": "string",
+    "street": "string",
+    "plaque": "string",
+    "latitude": "string",
+    "longitude": "string",
+    "floor": "string",
+    "alley": "string",
+    "key": 1
+  },
+  "Type": "سبک",
+  "PackCount": "0",
+  "IsPacking": true,
+  "IsInsurance": true,
+  "InsuranceValue": "بین 100 تا 200 میلیون تومان",
+  "Location": "asdasd",
+  "Explain": "توضیحات",
+  "key": 1
+}
+```
+
+<hr>
+
+<h2 dir='rtl'>پذیرش درخواست </h2>
+
+<h3>URL</h3>
+
+```
+PUT /api/v{version}/driver/pack/{key}/accept 
+```
+
+<h3>Response</h3>
+_status code 200 - ok_
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+
+```
+
+<hr>
+
+<h2 dir='rtl'>لغو درخواست </h2>
+
+<h3>URL</h3>
+
+```
+PUT /api/v{version}/driver/pack/cancel 
+```
+
+
+
+
+<h3>Request Body</h3>
+
+```
+{
+  "Key": 0,
+  "Description": "string"
+}
+```
+
+<h3>Response</h3>
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+```
+
+<hr>
+
+<h2 dir='rtl'>در مقصد هستم </h2>
+
+<h3>URL</h3>
+
+```
+POST /api/v{version}/driver/pack/{key}/location-report 
+```
+
+<h3>Response</h3>
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+```
+
+
+
 
 
