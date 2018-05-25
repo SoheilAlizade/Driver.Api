@@ -292,6 +292,227 @@ POST /api/v{version}/driver/pack/{key}/location-report
 ```
 
 
+<hr>
+
+<h2 dir='rtl'> ویرایش جزئیات بسته</h2>
+
+<h3>URL</h3>
+
+```
+PUT /api/v{version}/driver/pack/details 
+```
+
+
+<h3>Request Body</h3>
+
+```
+{
+  "PackTypeId": 0,
+  "WeightId": 0,
+  "IsInsurance": true,
+  "InsuranceValueId": 0,
+  "IsPacking": true,
+  "PackCount": 0,
+  "PayAtOrigin": true,
+  "key": 0
+}
+```
+
+<h3>Response</h3>
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+```
+
+<hr>
+
+<h2 dir='rtl'>تکمیل اسناد   </h2>
+
+<h3>URL</h3>
+
+```
+PUT /api/v{version}/driver/pack/compelete 
+```
+
+<h3>Request Body</h3>
+
+```
+{
+  "NationalCodeBase64": "string",
+  "PackBase64": "string",
+  "SignatureBase64": "string",
+  "key": 0
+}
+```
+
+<h3>Response</h3>
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+```
+
+
+<hr>
+
+<h2 dir='rtl'>تحویل به پورت    </h2>
+
+<h3>URL</h3>
+
+```
+PUT /api/v{version}/driver/pack/{key}/delivered 
+```
+
+
+<h3>Response</h3>
+
+```
+{
+  "status_code": 200,
+  "message": "Request been successfully.",
+  "isSuccess": true
+}
+```
 
 
 
+
+<hr>
+
+<h2 dir='rtl'>
+پروفایل - منو
+ </h2>
+
+<h3>URL</h3>
+
+```
+GET /api/v{version}/driver/profile 
+```
+
+<h3>Response</h3>
+
+```
+{
+  "Code": 0,
+  "DisplayName": "string",
+  "PhotoUrl": "string"
+}
+```
+
+
+<hr>
+
+<h2 dir='rtl'>
+پروفایل - کامل
+ </h2>
+
+<h3>URL</h3>
+
+```
+GET /api/v{version}/driver/profile/full 
+```
+
+
+<h3>Response</h3>
+
+```
+{
+  "Code": "string",
+  "PhotoUrl": "string",
+  "Status": "string",
+  "FirstName": "string",
+  "LastName": "string",
+  "Gender": "string",
+  "Vehicle": "string",
+  "VehicleModel": "string",
+  "VehiclePlaque": "string",
+  "PhoneNumber": "string",
+  "Address": "string"
+}
+```
+
+
+<hr>
+
+<h2 dir='rtl'>
+پیام ها
+ </h2>
+
+<h3>URL</h3>
+
+```
+GET  /api/v{version}/driver/messages 
+```
+
+
+<h3>Response</h3>
+
+```
+[
+  {
+    "Message": "string",
+    "CreatedOn": "string"
+  }
+]
+```
+
+<hr>
+
+<h2 dir='rtl'>
+تاریخچه
+ </h2>
+
+<h3>URL</h3>
+
+```
+GET /api/v{version}/driver/histories 
+```
+
+<h3>Response</h3>
+
+```
+[
+  {
+    "Origin": "string",
+    "Destination": "string",
+    "Price": 0,
+    "Code": "string",
+    "Status": "string",
+    "CreatedOn": "string"
+  }
+]
+```
+
+<hr>
+
+<h2 dir='rtl'>
+ جستجو تاریخچه
+ </h2>
+
+<h3>URL</h3>
+
+```
+GET /api/v{version}/driver/histories/search ?text="searchworkd"
+```
+
+<h3>Response</h3>
+
+```
+[
+  {
+    "Origin": "string",
+    "Destination": "string",
+    "Price": 0,
+    "Code": "string",
+    "Status": "string",
+    "CreatedOn": "string"
+  }
+]
+```
