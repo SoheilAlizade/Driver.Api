@@ -144,17 +144,17 @@ _status code 200 - ok_
 
 <h3>Pack</h3>
 
-| فیلد          |      مقدار      |    توضیح     |
-| ------------- | :-------------: | :----------: |
-| `Origin`      |   تهران، ...    |  مبدا بسته   |
-| `Destination` |    تهران...     |  مقصد بسته   |
-| `Weight`      |     10 کیلو     |   وزن بسته   |
-| `Type`        |       سبک       | وضعیت راننده |
-| `PackCount`   |        5        | تعداد بسته |
-| `IsPacking`   | true \|\| false | بسته بندی |
-| `IsInsurance` | true \|\| flase | بیمه |
-| `Explain`     |  بسته شامل ..   | توضیحات |
-| `Price`       |       564       | قیمت |
+| فیلد          |      مقدار      |     توضیح      |
+| ------------- | :-------------: | :------------: |
+| `Origin`      |   تهران، ...    |   مبدا بسته    |
+| `Destination` |    تهران...     |   مقصد بسته    |
+| `Weight`      |     10 کیلو     |    وزن بسته    |
+| `Type`        |       سبک       |  وضعیت راننده  |
+| `PackCount`   |        5        |   تعداد بسته   |
+| `IsPacking`   | true \|\| false |   بسته بندی    |
+| `IsInsurance` | true \|\| flase |      بیمه      |
+| `Explain`     |  بسته شامل ..   |    توضیحات     |
+| `Price`       |       564       |      قیمت      |
 | `PayAtOrigin` | true \|\| false | پرداخت در مقصد |
 
 <div dir='rtl'>
@@ -168,7 +168,7 @@ _status code 200 - ok_
 <h3>URL</h3>
 
 ```
-GET /api/v{version}/driver/pack/{key}/full 
+GET /api/v{version}/driver/pack/{key}/full
 ```
 
 <h3>Response</h3>
@@ -224,7 +224,7 @@ _status code 200 - ok_
 <h3>URL</h3>
 
 ```
-PUT /api/v{version}/driver/pack/{key}/accept 
+PUT /api/v{version}/driver/pack/{key}/accept
 ```
 
 <h3>Response</h3>
@@ -236,7 +236,6 @@ _status code 200 - ok_
   "message": "Request been successfully.",
   "isSuccess": true
 }
-
 ```
 
 <hr>
@@ -246,11 +245,8 @@ _status code 200 - ok_
 <h3>URL</h3>
 
 ```
-PUT /api/v{version}/driver/pack/cancel 
+PUT /api/v{version}/driver/pack/cancel
 ```
-
-
-
 
 <h3>Request Body</h3>
 
@@ -260,6 +256,11 @@ PUT /api/v{version}/driver/pack/cancel
   "Description": "string"
 }
 ```
+
+| فیلد          | مقدار |      توضیح       |
+| ------------- | :---: | :--------------: |
+| `Key`         |   -   |      کدبسته      |
+| `Description` |   -   | توضیحات برای لغو |
 
 <h3>Response</h3>
 
@@ -278,7 +279,7 @@ PUT /api/v{version}/driver/pack/cancel
 <h3>URL</h3>
 
 ```
-POST /api/v{version}/driver/pack/{key}/location-report 
+POST /api/v{version}/driver/pack/{key}/location-report
 ```
 
 <h3>Response</h3>
@@ -291,7 +292,6 @@ POST /api/v{version}/driver/pack/{key}/location-report
 }
 ```
 
-
 <hr>
 
 <h2 dir='rtl'> ویرایش جزئیات بسته</h2>
@@ -299,9 +299,8 @@ POST /api/v{version}/driver/pack/{key}/location-report
 <h3>URL</h3>
 
 ```
-PUT /api/v{version}/driver/pack/details 
+PUT /api/v{version}/driver/pack/details
 ```
-
 
 <h3>Request Body</h3>
 
@@ -335,7 +334,7 @@ PUT /api/v{version}/driver/pack/details
 <h3>URL</h3>
 
 ```
-PUT /api/v{version}/driver/pack/compelete 
+PUT /api/v{version}/driver/pack/compelete
 ```
 
 <h3>Request Body</h3>
@@ -349,6 +348,13 @@ PUT /api/v{version}/driver/pack/compelete
 }
 ```
 
+| فیلد                 | مقدار |    توضیح     |
+| -------------------- | :---: | :----------: |
+| `NationalCodeBase64` |   -   | عکس کارت ملی |
+| `PackBase64`         |   -   |   عکس بسته   |
+| `SignatureBase64`    |   -   |  تصویر امضا  |
+| `key`                |   -   |   کد بسته    |
+
 <h3>Response</h3>
 
 ```
@@ -358,7 +364,6 @@ PUT /api/v{version}/driver/pack/compelete
   "isSuccess": true
 }
 ```
-
 
 <hr>
 
@@ -367,9 +372,8 @@ PUT /api/v{version}/driver/pack/compelete
 <h3>URL</h3>
 
 ```
-PUT /api/v{version}/driver/pack/{key}/delivered 
+PUT /api/v{version}/driver/pack/{key}/delivered
 ```
-
 
 <h3>Response</h3>
 
@@ -380,9 +384,6 @@ PUT /api/v{version}/driver/pack/{key}/delivered
   "isSuccess": true
 }
 ```
-
-
-
 
 <hr>
 
@@ -393,7 +394,7 @@ PUT /api/v{version}/driver/pack/{key}/delivered
 <h3>URL</h3>
 
 ```
-GET /api/v{version}/driver/profile 
+GET /api/v{version}/driver/profile
 ```
 
 <h3>Response</h3>
@@ -406,7 +407,6 @@ GET /api/v{version}/driver/profile
 }
 ```
 
-
 <hr>
 
 <h2 dir='rtl'>
@@ -416,9 +416,8 @@ GET /api/v{version}/driver/profile
 <h3>URL</h3>
 
 ```
-GET /api/v{version}/driver/profile/full 
+GET /api/v{version}/driver/profile/full
 ```
-
 
 <h3>Response</h3>
 
@@ -438,6 +437,20 @@ GET /api/v{version}/driver/profile/full
 }
 ```
 
+| فیلد            |       مقدار        |    توضیح     |
+| --------------- | :----------------: | :----------: |
+| `Code`          |         -          |      کد      |
+| `PhotoUrl`      |         -          |   آدرس عکس   |
+| `Status`        | ready \|\| resting | وضعیت راننده |
+| `FirstName`     |         -          |     نام      |
+| `LastName`      |         -          | نام خانوادگی |
+| `Gender`        |         -          |    جنسیت     |
+| `Vehicle`       |         -          |  نوع وسیله   |
+| `VehicleModel`  |         -          |  مدل وسیله   |
+| `VehiclePlaque` |         -          |  پلاک وسیله  |
+| `VehicleColor`  |         -          |  رنگ وسیله   |
+| `PhoneNumber`   |         -          |  شماره تلفن  |
+| `Address`       |         -          |     آدرس     |
 
 <hr>
 
@@ -448,9 +461,8 @@ GET /api/v{version}/driver/profile/full
 <h3>URL</h3>
 
 ```
-GET  /api/v{version}/driver/messages 
+GET  /api/v{version}/driver/messages
 ```
-
 
 <h3>Response</h3>
 
@@ -472,7 +484,7 @@ GET  /api/v{version}/driver/messages
 <h3>URL</h3>
 
 ```
-GET /api/v{version}/driver/histories 
+GET /api/v{version}/driver/histories
 ```
 
 <h3>Response</h3>
