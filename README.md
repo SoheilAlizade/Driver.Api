@@ -65,7 +65,7 @@ GET /api/v{version}/driver/status
 | `Weight`      |   کیلو گرم 3    |       |
 | `Type`        |       سبک       |       |
 | `PackCount`   |        6        |       |
-| `key`         |    65465465     |       |
+| `key`         |    65465465     |     کد سفارش  |
 
 <div dir='rtl'>
 در صفحه اول موبایل یعنی خانه برای دریافت وضعیت کاربر به همراه لیست سفارش ها می توان از این آدرس استفاده کنید
@@ -432,6 +432,7 @@ GET /api/v{version}/driver/profile/full
   "Vehicle": "string",
   "VehicleModel": "string",
   "VehiclePlaque": "string",
+  "VehicleColor": "string",
   "PhoneNumber": "string",
   "Address": "string"
 }
